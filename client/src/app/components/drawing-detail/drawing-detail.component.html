@@ -1,0 +1,91 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title> Outils </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-expansion-panel *ngFor="let basicTool of basicTools">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ basicTool.NAME }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ basicTool.DESCRIPTION }}</p>
+        <video autoplay loop muted><source class="animated-gif" src="{{ basicTool.PICTURE }}" type="video/mp4" /></video>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Outils de tracage </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel *ngFor="let drawingTool of drawingTools" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ drawingTool.NAME }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ drawingTool.DESCRIPTION }}</p>
+            <video autoplay loop muted><source class="animated-gif" src="{{ drawingTool.PICTURE }}" type="video/mp4" /></video>
+        </mat-expansion-panel>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Forme </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel *ngFor="let shape of shapes" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ shape.NAME }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ shape.DESCRIPTION }}</p>
+            <video autoplay loop muted><source class="animated-gif" src="{{ shape.PICTURE }}" type="video/mp4" /></video>
+        </mat-expansion-panel>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel *ngFor="let fill of fills">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ fill.NAME }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ fill.DESCRIPTION }}</p>
+        <video autoplay loop muted><source class="animated-gif" src="{{ fill.PICTURE }}" type="video/mp4" /></video>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Outils de sélection </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel *ngFor="let transformation of transformations" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ transformation.NAME }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ transformation.DESCRIPTION }}</p>
+            <video autoplay loop muted><source class="animated-gif" src="{{ transformation.PICTURE }}" type="video/mp4" /></video>
+        </mat-expansion-panel>
+    </mat-expansion-panel>
+</mat-expansion-panel>
+
+<mat-expansion-panel *ngFor="let feature of otherFeatures">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ feature.NAME }}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{ feature.DESCRIPTION }}</p>
+    <img class="image" src="{{ feature.PICTURE }}" type="image/png" />
+</mat-expansion-panel>
+
+<mat-expansion-panel *ngFor="let undo of undoredo">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ undo.NAME }}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{ undo.DESCRIPTION }}</p>
+    <div><img class="image" src="{{ undo.PICTURE }}" type="image/png" /></div>
+    <div><img class="image" src="../../../assets/img/refaire.png" type="image/png" /></div>
+</mat-expansion-panel>

@@ -1,0 +1,21 @@
+<div id="polygonAttributes">
+    <h2 class="toolName">{{ polygonService.name }}</h2>
+    <hr />
+    <app-slider
+        title="Épaisseur Contour"
+        [min]="polygonService.minBorderWidth"
+        [max]="polygonService.maxBorderWidth"
+        [step]="1"
+        [value]="toolWidth"
+        (valueChange)="changeBorderWidth($event)"
+    ></app-slider>
+    <app-slider
+        title="Nombre de points"
+        [min]="polygonService.minNumberOfSides"
+        [max]="polygonService.maxNumberOfSides"
+        [step]="1"
+        [value]="numberOfSides"
+        (valueChange)="changeNumberOfSides($event)"
+    ></app-slider>
+    <app-fill-types-selection (valueChange)="changeFillStyle($event)" [currentFillStyle]="this.fillStyle"></app-fill-types-selection>
+</div>
